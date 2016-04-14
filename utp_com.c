@@ -228,7 +228,7 @@ int main(int argc, char * argv[])
 	}
 
 	// Open device
-	device_fd = open(device_name, O_RDWR);
+	device_fd = open(device_name, O_RDONLY);
 	if (device_fd < 0)
 	{
 		fprintf(stderr, "Error opening device: %s\n", device_name);
