@@ -195,6 +195,12 @@ int main(int argc, char * argv[])
 		// Allocate memory
 		file_data = malloc(st.st_size);
 
+		if (file_data == 0)
+		{
+			fprintf(stderr, "Memory allocation failed; Please ensure your VM has at least 3GB of memory\n");
+			return 1;
+		}
+
 		// Open file
 		file_fd = open(file_name, O_RDONLY);
 		if (file_fd < 0)
